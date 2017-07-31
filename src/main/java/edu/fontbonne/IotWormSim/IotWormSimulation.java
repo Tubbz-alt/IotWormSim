@@ -60,7 +60,7 @@ public class IotWormSimulation {
                 generateArchitecture = new GenerateP2pArchitecture();
                 break;
             default:
-                throw new IllegalStateException("Didn't choose a valid architecture");
+                throw new IllegalArgumentException("Didn't choose a valid architecture");
         }
 
         switch(coloring)
@@ -72,7 +72,7 @@ public class IotWormSimulation {
                 coloringAlgorithm = new ApplyRandomColoring(graph);
                 break;
             default:
-                throw new IllegalStateException("Didn't choose a valid coloring algorithm");
+                throw new IllegalArgumentException("Didn't choose a valid coloring algorithm");
         }
 
         sb = new StringBuilder();
