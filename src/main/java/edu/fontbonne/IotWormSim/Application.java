@@ -20,7 +20,7 @@ public class Application {
         boolean visuals = false;
 
         // Set this to where you want data saved
-        String rootDir = System.getProperty("user.home") + "/Desktop/";
+        String rootDir = System.getProperty("user.home") + "/Desktop/IoT/";
 
         run(IotWormSimulation.Architecture.HUB, IotWormSimulation.Coloring.RANDOM,
                 thresholds,iterations,visuals,rootDir);
@@ -32,12 +32,12 @@ public class Application {
                 thresholds,iterations,visuals,rootDir);
     }
 
-    public static void run(IotWormSimulation.Architecture architecture,
+    private static void run(IotWormSimulation.Architecture architecture,
                            IotWormSimulation.Coloring coloring, double[] thresholds,
                            int iterations, boolean visuals, String rootDir)
     {
-        for (int i = 0; i < thresholds.length; ++i) {
-            IotWormSimulation sim = new IotWormSimulation(thresholds[i],iterations,
+        for (double threshold : thresholds) {
+            IotWormSimulation sim = new IotWormSimulation(threshold,iterations,
                     architecture,coloring,rootDir);
 
             sim.run(visuals);

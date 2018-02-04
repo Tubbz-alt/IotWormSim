@@ -110,11 +110,13 @@ public class IotWormSimulation {
             try {
                 TimeUnit.SECONDS.sleep(5);
             } catch (Exception ex) {
+                System.out.println("Error while sleeping");
             }
             makeScreenshot();
             try {
                 TimeUnit.SECONDS.sleep(5);
             } catch (Exception ex) {
+                System.out.println("Error while sleeping");
             }
             frame.dispose();
         }
@@ -155,14 +157,14 @@ public class IotWormSimulation {
         }
     }
 
-    public void makeScreenshot()
+    private void makeScreenshot()
     {
-        graph.addAttribute("ui.screenshot", rootDir +
+        graph.addAttribute("ui.screenshot", rootDir + "images/" +
                 generateArchitecture + "_" + coloringAlgorithm + "_" + threshold +  ".png");
     }
 
 
-    public void writeToFile(String s)
+    private void writeToFile(String s)
     {
         BufferedWriter bw = null;
         FileWriter fw = null;
